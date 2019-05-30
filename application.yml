@@ -1,0 +1,21 @@
+#当前文件一定要以UTF-8的编码保存文件   
+#当前配置文件的的内容使用dev的环境的配置内容
+spring: 
+   profiles: 
+      active: 
+      - dev
+      
+---
+spring: 
+   #开发环境
+   profiles: dev
+   application: 
+      name: microservicecloud-config-liaoziyin-dev
+      
+---
+spring: 
+   #测试环境
+   profiles: test
+   application: 
+      name: microservicecloud-config-liaoziyin-test 
+         
