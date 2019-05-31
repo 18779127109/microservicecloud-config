@@ -1,0 +1,46 @@
+#当前文件一定要以UTF-8的编码保存文件   
+#当前配置文件的的内容使用dev的环境的配置内容
+spring: 
+   profiles: 
+      active: 
+      - dev
+      
+---
+server: 
+   port: 8201
+
+spring: 
+   #当前的环境为dev环境
+   profiles: dev
+   #配置一个访问的名称，在微服务中，这个配置很重要，因为这是对外暴露的一个微服务名字，可以在注册中心上看到的服务名称
+   application: 
+      name: microservicecloud-config-client
+
+eureka: 
+   client: 
+      service-url: 
+         #defaultZone: http://localhost:7001/eureka
+         #将这个部门生产者的微服务注册到Eureka服务端，成为一个Eureka客户端
+         #http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+         #这样配置表示，将本身这个微服务同时注册进下面3个注册中心成为Eureka的客户端
+         defaultZone: http://eureka-dev.com:7001/eureka/
+         
+---
+server: 
+   port: 8202
+
+spring: 
+   #当前的环境为test环境
+   profiles: test
+   #配置一个访问的名称，在微服务中，这个配置很重要，因为这是对外暴露的一个微服务名字，可以在注册中心上看到的服务名称
+   application: 
+      name: microservicecloud-config-client
+
+eureka: 
+   client: 
+      service-url: 
+         #defaultZone: http://localhost:7001/eureka
+         #将这个部门生产者的微服务注册到Eureka服务端，成为一个Eureka客户端
+         #http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+         #这样配置表示，将本身这个微服务同时注册进下面3个注册中心成为Eureka的客户端
+         defaultZone: http://eureka-test.com:7001/eureka/      

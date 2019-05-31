@@ -9,6 +9,7 @@ spring:
 spring: 
    #开发环境
    profiles: dev
+   #配置一个访问的名称，在微服务中，这个配置很重要，因为这是对外暴露的一个微服务名字，可以在注册中心上看到的服务名称
    application: 
       name: microservicecloud-config-liaoziyin-dev
       
@@ -16,6 +17,7 @@ spring:
 spring: 
    #测试环境
    profiles: test
+   #配置一个访问的名称，在微服务中，这个配置很重要，因为这是对外暴露的一个微服务名字，可以在注册中心上看到的服务名称
    application: 
       name: microservicecloud-config-liaoziyin-test 
          
